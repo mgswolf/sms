@@ -1,0 +1,8 @@
+<%= provide :breadcrumb do %>
+    <li><%= link_to t('titles.students.index'), students_path %><span class="divider">/</span></li>
+    <li class="active"><%= t('titles.students.edit', student: @student.name) %></li>
+<% end %>
+<div class="page-header">
+  <h2><%= t('titles.students.edit', student: @student.name) %></h2>
+</div>
+<%= render :partial => 'form' %>

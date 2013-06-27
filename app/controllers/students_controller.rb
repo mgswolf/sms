@@ -13,6 +13,9 @@ class StudentsController < ApplicationController
     @student = Student.new
   end
 
+  def edit
+  end
+
   def create
     @student = Student.new(params[:student])
     if @student.save
@@ -20,6 +23,15 @@ class StudentsController < ApplicationController
     else
       flash.now.alert = t("flash.students.create.alert")
       render :new
+    end
+  end
+
+  def update
+    if @student.update_attributes(params[:student])
+      redirect_to @student, notice: t("flash.students.update.notice")
+    else
+      flash.now.alert = t("flash.students.update.alert")
+      render :edit
     end
   end
 
