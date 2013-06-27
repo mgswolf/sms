@@ -1,0 +1,8 @@
+<%= provide :breadcrumb do %>
+    <li><%= link_to t('shared.nav.students'), students_path %><span class="divider">/</span></li>
+    <li class="active"><%= t('titles.students.new')  %></li>
+<% end %>
+<div class="page-header">
+  <h2><%=t 'titles.students.new' %></h2>
+</div>
+<%= render :partial => 'form' %>

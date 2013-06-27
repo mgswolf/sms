@@ -9,6 +9,20 @@ class StudentsController < ApplicationController
   def show
   end
 
+  def new
+    @student = Student.new
+  end
+
+  def create
+    @student = Student.new(params[:student])
+    if @student.save
+      redirect_to @student, notice: t("flash.students.create.notice")
+    else
+      flash.now.alert = t("flash.students.create.alert")
+      render :new
+    end
+  end
+
   private
     def get_student
       @student = Student.find(params[:id])

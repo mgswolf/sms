@@ -11,3 +11,14 @@ pt-BR:
       update:
         alert: "Não foi possível atualizar a turma."
         notice: "Turma atualizada com sucesso."
+    students:
+      not_found: 'Aluno não encontrado.'
+      create:
+        alert: "Não foi possível cadastrar o aluno."
+        notice: "Aluno cadastrado com sucesso."
+      destroy:
+        alert: "Não foi possível excluir o aluno."
+        notice: "Aluno excluído com sucesso."
+      update:
+        alert: "Não foi possível atualizar o aluno."
+        notice: "Aluno atualizado com sucesso."

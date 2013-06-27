@@ -1,0 +1,22 @@
+<%= form_for @student, :html => { :class => 'form-horizontal' } do |f| %>
+    <%= render 'shared/error_messages', object: @student %>
+    <div class="control-group">
+      <%= f.label :name, t("form.student.name"), :class => 'control-label' %>
+      <div class="controls">
+        <%= f.text_field :name, :class => 'text_field', require: true %>
+      </div>
+    </div>
+
+    <div class="control-group">
+      <%= f.label :school_class_id, t("form.student.school_class"), :class => 'control-label' %>
+      <div class="controls">
+        <%= f.collection_select :school_class_id, SchoolClass.all, :id, :name, :class => 'select', require: true %>
+      </div>
+    </div>
+
+    <div class="form-actions">
+      <%= f.submit :class => 'btn btn-primary' %>
+      <%= link_to t("helpers.actions.cancel"),
+                  students_path, :class => 'btn' %>
+    </div>
+<% end %>

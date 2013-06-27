@@ -2,3 +2,6 @@ pt-BR:
   form:
     school_class:
       name: "Nome da Turma"
+    student:
+      name: "Nome do Aluno"
+      school_class: "Turma"
