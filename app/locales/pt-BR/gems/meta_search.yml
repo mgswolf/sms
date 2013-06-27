@@ -1,0 +1,9 @@
+pt-BR:
+  meta_search:
+    or: 'ou'
+    predicates:
+      contains: "%{attribute} contendo"
+      equals: "%{attribute} igual"
+    attributes:
+      school_class:
+        name_contains: "Nome contendo"

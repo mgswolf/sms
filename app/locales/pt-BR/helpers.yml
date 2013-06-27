@@ -1,0 +1,17 @@
+pt-BR:
+  helpers:
+    actions:
+      all: "Ações"
+      back: "Voltar"
+      clear: "Limpar"
+      confirm: "Confirmar exclusão?"
+      destroy: "Excluir"
+      edit: "Editar"
+      new: "Novo"
+      new_f: "Nova"
+      show: "Visualizar"
+    created_at: "Criado em"
+    updated_at: "Atualizado em"
+    links:
+      search: "Buscar"
+    order: "Ordem"

@@ -5,6 +5,9 @@ gem 'sqlite3'
 gem 'rails-translate-routes'
 gem 'kaminari'
 gem 'rails-i18n'
+gem "friendly_id", "~> 4.0"
+gem "meta_search"
+gem "nested_form"
 
 group :assets do
   gem 'sass-rails',   '~> 3.2.3'

@@ -1,0 +1,13 @@
+<tr class="school_class" id="<%= dom_id(school_class) %>">
+  <td><%= link_to school_class.id, school_class_path(school_class) %></td>
+  <td><%= school_class.name %></td>
+  <td><%=l school_class.created_at %></td>
+  <td>
+    <%= link_to t("helpers.actions.show"),
+                school_class_path(school_class), :class => 'btn btn-mini' %>
+    <%= link_to t("helpers.actions.edit"),
+                edit_school_class_path(school_class), :class => 'btn btn-info btn-mini' %>
+    <%= link_to t("helpers.actions.destroy"),
+                school_class_path(school_class), method: :delete, confirm: t('helpers.actions.confirm'), :class => 'btn btn-danger btn-mini' %>
+  </td>
+</tr>

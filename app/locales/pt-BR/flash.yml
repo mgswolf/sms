@@ -1,0 +1,13 @@
+pt-BR:
+  flash:
+    school_classes:
+      not_found: "Turma não encontrada."
+      create:
+        alert: "Não foi possível cadastrar a turma."
+        notice: "Turma cadastrada com sucesso."
+      destroy:
+        alert: "Não foi possível excluir a turma."
+        notice: "Turma excluída com sucesso."
+      update:
+        alert: "Não foi possível atualizar a turma."
+        notice: "Turma atualizada com sucesso."
