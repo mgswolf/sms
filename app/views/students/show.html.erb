@@ -6,15 +6,17 @@
   <h2><%= @student.name %></h2>
 </div>
 
-<table class="table table-striped">
-  <tr>
+<table class="table">
+  <tbody>
+  <tr class="odd">
     <td><strong><%= t_field('student','name') %>:</strong></td>
     <td><%= @student.name %></td>
   <tr>
   <tr>
     <td><strong><%= t_field('student','school_class') %>:</strong></td>
-    <td><%= @student.school_class.name %></td>
-  <tr>
+    <td><%= link_to @student.school_class.name, @student.school_class %></td>
+  <tr class="even">
+  </tbody>
 </table>
 
 </dl>

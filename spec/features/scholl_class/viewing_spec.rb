@@ -32,5 +32,15 @@ describe "Viewing School Classes" do
     end
   end
 
+  describe "have students" do
+    before do
+      school_class.students.create(name: "Joe")
+      ensure_on school_class_path(school_class)
+    end
+
+    it "show Joe on students list" do
+      page.should have_content("Joe")
+    end
+  end
 
 end

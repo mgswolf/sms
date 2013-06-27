@@ -18,7 +18,7 @@ describe Student do
   end
 
   describe "needs a school class" do
-    before { student.school_class_id = nil }
+    before { student.school_class = nil }
     it { should_not be_valid }
   end
 end

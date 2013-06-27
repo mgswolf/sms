@@ -1,0 +1,5 @@
+pt-BR:
+  school_classes:
+    students: "Alunos dessa Turma"
+    add_student: "Adicionar Aluno"
+    remove_student: "Remover este Aluno"

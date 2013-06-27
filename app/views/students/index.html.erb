@@ -6,6 +6,8 @@
     <%=  form_for @search do |f| %>
         <li class="nav-header"><%= f.label :name_contains %></li>
         <li><%= f.text_field :name_contains %></li>
+        <li class="nav-header"><%= f.label :school_class_id_equals %></li>
+        <li><%= f.collection_select :school_class_id_equals, SchoolClass.all, :id,:name %></li>
         <hr/>
         <li class="nav-header"><%=t 'helpers.order'  %></li>
         <%= f.sort_link :id %> |

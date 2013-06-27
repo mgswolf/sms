@@ -7,3 +7,5 @@ pt-BR:
     attributes:
       school_class:
         name_contains: "Nome contendo"
+      student:
+        school_class_id_equals: "Turma"

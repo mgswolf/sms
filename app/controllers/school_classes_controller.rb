@@ -45,7 +45,7 @@ class SchoolClassesController < ApplicationController
 
   private
     def get_school_class
-      @school_class = SchoolClass.find(params[:id])
+      @school_class = SchoolClass.find(params[:id], include: [:students])
     rescue ActiveRecord::RecordNotFound
       redirect_to school_classes_path, alert: t("flash.school_classes.not_found")
     end

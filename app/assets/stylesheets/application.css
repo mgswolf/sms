@@ -15,3 +15,9 @@
 .navbar-static-top {
   margin-botton: 40px;
 }
+.table .odd{
+  background: #f9f9f9
+}
+.table .even {
+  background: #FFFFFF
+}

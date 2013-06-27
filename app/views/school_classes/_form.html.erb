@@ -1,10 +1,20 @@
-<%= form_for @school_class, :html => { :class => 'form-horizontal' } do |f| %>
+<%= nested_form_for @school_class, :html => { :class => 'form-horizontal' } do |f| %>
     <%= render 'shared/error_messages', object: @school_class %>
     <div class="control-group">
       <%= f.label :name, t("form.school_class.name"), :class => 'control-label' %>
       <div class="controls">
         <%= f.text_field :name, :class => 'text_field', require: true %>
       </div>
+    </div>
+
+    <div class="well">
+      <h4><%= t("school_classes.students") %></h4>
+        <%= f.fields_for :students do |student_form| %>
+          <%= student_form.label :name, t("form.student.name") %>
+          <%= student_form.text_field :name %>
+          <%= student_form.link_to_remove t("school_classes.remove_student"), class: "btn btn-mini btn-danger" %>
+        <% end %>
+        <p><%= f.link_to_add t("school_classes.add_student"), :students, class: "btn btn-mini btn-success" %></p>
     </div>
 
     <div class="form-actions">
