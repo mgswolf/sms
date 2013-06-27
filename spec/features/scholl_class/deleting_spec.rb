@@ -7,7 +7,7 @@ describe "Deleting School Class" do
     click_link t("helpers.actions.destroy")
   end
 
-  it "destroy and redirect to services list" do
+  it "destroy and redirect to school classes list" do
     current_path.should == school_classes_path
   end
 

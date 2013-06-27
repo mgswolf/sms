@@ -35,6 +35,14 @@ class StudentsController < ApplicationController
     end
   end
 
+  def destroy
+    if @student.destroy
+      redirect_to students_path, notice: t("flash.students.destroy.notice")
+    else
+      redirect_to @student, alert: t("flash.students.destroy.alert")
+    end
+  end
+
   private
     def get_student
       @student = Student.find(params[:id])
