@@ -1,5 +1,5 @@
 <%= provide :breadcrumb do %>
-    <li><%= link_to t('titles.school_classes.index'), school_class_path %><span class="divider">/</span></li>
+    <li><%= link_to t('titles.school_classes.index'), school_classes_path %><span class="divider">/</span></li>
     <li class="active"><%= t('titles.school_classes.edit', school_class: @school_class.name) %></li>
 <% end %>
 <div class="page-header">

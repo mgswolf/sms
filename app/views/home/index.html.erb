@@ -1,0 +1,13 @@
+<ul class="well nav nav-list">
+  <li class=" nav-header"><%= t("home.recent.school_classes") %></li>
+  <% @school_classes.each do |sc| %>
+    <li><%= link_to sc.name, sc %></li>
+  <% end %>
+</ul>
+<br />
+<ul class="well nav nav-list">
+  <li class="nav-header"><%= t("home.recent.students") %></li>
+  <% @students.each do |student| %>
+    <li><%= link_to student.name, student %></li>
+  <% end %>
+</ul>

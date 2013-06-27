@@ -21,3 +21,6 @@ pt-BR:
       school_class:
         create: "Cadastrar Turma"
         update: "Atualizar Turma"
+      student:
+        create: "Cadastrar Aluno"
+        update: "Atulizar Aluno"

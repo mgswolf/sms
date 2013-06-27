@@ -4,7 +4,7 @@
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=Edge,chrome=1">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title><%= content_for?(:title) ? yield(:title) : "School Management System" %></title>
+    <title><%= content_for?(:title) ? yield(:title) : t("shared.site_title") %></title>
     <%= csrf_meta_tags %>
 
     <!-- Le HTML5 shim, for IE6-8 support of HTML elements -->
@@ -28,7 +28,7 @@
             <span class="icon-bar"></span>
             <span class="icon-bar"></span>
           </a>
-          <a class="brand" href="#">Sms</a>
+          <a class="brand" href="#"><%= t("shared.site_title") %></a>
           <div class="container nav-collapse">
             <ul class="nav">
               <li><%= link_to t("shared.nav.school_classes"), school_classes_path  %></li>
@@ -63,7 +63,7 @@
       </div><!--/row-->
 
       <footer>
-        <p>&copy; School Management System 2013</p>
+        <p>&copy; <%= t("shared.site_title") %> 2013</p>
       </footer>
 
     </div> <!-- /container -->
