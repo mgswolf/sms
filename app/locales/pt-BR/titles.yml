@@ -4,3 +4,7 @@ pt-BR:
       index: "Turmas"
       edit: "Editar Turma: %{school_class}"
       new: "Nova Turma"
+    students:
+      index: "Alunos"
+      edit: "Editar Aluno: %{student}"
+      new: "Novo Aluno"

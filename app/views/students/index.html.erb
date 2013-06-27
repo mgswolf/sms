@@ -1,0 +1,37 @@
+<%= provide(:title,  t('titles.students.index')) %>
+<%= provide :breadcrumb do %>
+    <li class="active"><%= t('shared.nav.students') %></li>
+<% end %>
+<%= provide :sidebar do %>
+    <%=  form_for @search do |f| %>
+        <li class="nav-header"><%= f.label :name_contains %></li>
+        <li><%= f.text_field :name_contains %></li>
+        <hr/>
+        <li class="nav-header"><%=t 'helpers.order'  %></li>
+        <%= f.sort_link :id %> |
+        <%= f.sort_link :name %>
+        <hr/>
+        <%= f.submit t('helpers.links.search'), class: 'btn btn-primary' %> <%= link_to t('helpers.actions.clear'), students_path, class: 'btn' %>
+    <% end %>
+<% end %>
+<div class="page-header">
+  <h2><%=  t('titles.students.index') %></h2>
+</div>
+<table class="table table-striped">
+  <thead>
+  <tr>
+    <th>Id</th>
+    <th><%= t_field('student','name') %></th>
+    <th><%= t_field('student','school_class') %></th>
+    <th><%= t('helpers.created_at') %></th>
+    <th><%=t 'helpers.actions.all' %></th>
+  </tr>
+  </thead>
+  <tbody>
+  <%= render @students %>
+  </tbody>
+</table>
+<%= paginate @students %>
+<%= link_to t("helpers.actions.new"),
+            new_school_class_path,
+            :class => 'btn btn-primary' %>

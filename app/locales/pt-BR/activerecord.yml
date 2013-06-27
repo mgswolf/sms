@@ -40,6 +40,12 @@ pt-BR:
       school_class:
         one: Turma
         other: Turmas
+      student:
+        one: Aluno
+        other: Alunos
     attributes:
       school_class:
         name: Nome
+      student:
+        name: Nome
+        school_class: Turma
