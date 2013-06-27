@@ -3,6 +3,7 @@ pt-BR:
     actions:
       all: "Ações"
       back: "Voltar"
+      cancel: "Cancelar"
       clear: "Limpar"
       confirm: "Confirmar exclusão?"
       destroy: "Excluir"
@@ -15,3 +16,8 @@ pt-BR:
     links:
       search: "Buscar"
     order: "Ordem"
+
+    submit:
+      school_class:
+        create: "Cadastrar Turma"
+        update: "Atualizar Turma"

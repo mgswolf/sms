@@ -2,3 +2,5 @@ pt-BR:
   titles:
     school_classes:
       index: "Turmas"
+      edit: "Editar Turma: %{school_class}"
+      new: "Nova Turma"
