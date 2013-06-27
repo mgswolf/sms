@@ -1,6 +1,6 @@
 require 'faker'
 puts '---Cleaning DataBase --'
-[SchoolClass].map(&:delete_all)
+[SchoolClass, Student].map(&:delete_all)
 
 # School Classes
 puts '---Creating School Classes ---'
@@ -11,4 +11,16 @@ File.open("#{Rails.root}/db/seeds/classes.yml") do |scholl_class|
     SCHOLL_CLASSES << name
   end
 end
-10.times { FactoryGirl.create(:school_class, name: SCHOLL_CLASSES.sample) }
+school_classes = []
+10.times do
+  school_classes << FactoryGirl.create(:school_class, name: SCHOLL_CLASSES.sample)
+end
+
+# Students
+puts '---Creating Students ---'
+50.times do
+  FactoryGirl.create(:student, {
+      name: Faker::Name.name,
+      school_class: school_classes.sample
+    })
+end

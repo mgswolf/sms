@@ -1,0 +1,12 @@
+pt-BR:
+  routes:
+    home: inicio
+    new: novo
+    edit: editar
+    destroy: excluir
+    cancel: cancelar
+    page: pagina
+    school_class: turma
+    school_classes: turmas
+    student: aluno
+    students: alunos
