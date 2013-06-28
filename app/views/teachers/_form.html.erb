@@ -7,6 +7,21 @@
       </div>
     </div>
 
+
+
+
+    <div id="teacher-school-classes">
+    <h4><%= t("teachers.school_classes") %></h4>
+     <div class="control-group">
+    <%= hidden_field_tag "teacher[school_class_ids][]", nil %>
+      <% SchoolClass.all.each do |school_class| %>
+        <%= label_tag dom_id(school_class), school_class.name, class: "checkbox inline" %>
+        <%= check_box_tag "teacher[school_class_ids][]", school_class.id, @teacher.school_class_ids.include?(school_class.id), id: dom_id(school_class) %>
+      <% end %>
+    </div>
+    </div>
+
+
     <div class="form-actions">
       <%= f.submit :class => 'btn btn-primary' %>
       <%= link_to t("helpers.actions.cancel"),

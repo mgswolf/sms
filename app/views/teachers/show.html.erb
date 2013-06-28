@@ -13,8 +13,14 @@
   <tr>
 </table>
 
-</dl>
-
+<h4><%= t("teachers.school_classes") %></h4>
+<table class="table">
+  <% @teacher.school_classes.each do |school_class| %>
+    <tr class="<%= cycle('odd', 'even') %>">
+      <td><%= link_to school_class.name, school_class %></td>
+    <tr>
+  <% end %>
+</table>
 
 <div class="form-actions">
   <%= link_to t('helpers.actions.back'),

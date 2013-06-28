@@ -2,6 +2,7 @@ class SchoolClass < ActiveRecord::Base
   extend FriendlyId
   attr_accessible :name, :students_attributes
   has_many :students, :inverse_of => :school_class
+  has_and_belongs_to_many :teachers
 
   validates :name, presence: true
   friendly_id :name, use: :slugged
