@@ -1,0 +1,29 @@
+<%= provide :breadcrumb do %>
+    <li><%= link_to t('shared.nav.teachers'), teachers_path %><span class="divider">/</span></li>
+    <li class="active"><%= @teacher.name %></li>
+<% end %>
+<div class="page-header">
+  <h2><%= @teacher.name %></h2>
+</div>
+
+<table class="table">
+  <tr class="odd">
+    <td><strong><%= t_field('teacher','name') %>:</strong></td>
+    <td><%= @teacher.name %></td>
+  <tr>
+</table>
+
+</dl>
+
+
+<div class="form-actions">
+  <%= link_to t('helpers.actions.back'),
+              teachers_path, :class => 'btn'  %>
+  <%= link_to t("helpers.actions.edit"),
+              edit_teacher_path(@teacher), :class => 'btn btn-info' %>
+  <%= link_to t("helpers.actions.destroy"),
+              teacher_path(@teacher),
+              :method => 'delete',
+              :data => { :confirm => t("helpers.actions.confirm", :default => 'Are you sure?') },
+              :class => 'btn btn-danger' %>
+</div>

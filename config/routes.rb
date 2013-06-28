@@ -6,6 +6,9 @@ Sms::Application.routes.draw do
   resources :students do
     get 'page/:page', :action => :index, :on => :collection
   end
+  resources :teachers do
+    get 'page/:page', :action => :index, :on => :collection
+  end
 end
 
 ActionDispatch::Routing::Translator.translate_from_file(

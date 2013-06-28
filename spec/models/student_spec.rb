@@ -7,6 +7,7 @@ describe Student do
 
   it { should be_valid }
   it { should respond_to(:school_class) }
+  #it { should respond_to(:teachers) }
 
   describe "have a name" do
     before { student.name = nil }

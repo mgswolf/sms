@@ -1,6 +1,6 @@
 require 'spec_helper'
 
-describe "Viewing School Classes" do
+describe "Viewing Students" do
   let(:school_class) { FactoryGirl.create(:school_class) }
   before do
     3.times { FactoryGirl.create(:student, school_class: school_class)}
@@ -24,11 +24,11 @@ describe "Viewing School Classes" do
       click_button t('helpers.links.search')
     end
 
-    it "show Information System" do
+    it "show Joe" do
       page.should have_content('Joe')
     end
 
-    it "don't show Computer Science" do
+    it "don't show Paul" do
       page.should_not have_content('Paul')
     end
   end

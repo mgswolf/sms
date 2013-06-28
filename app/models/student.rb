@@ -1,6 +1,7 @@
 class Student < ActiveRecord::Base
   extend FriendlyId
   belongs_to :school_class
+  has_many :teacher, through: :school_class
   attr_accessible :name, :school_class_id
 
   validates :name, :school_class, presence: true

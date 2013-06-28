@@ -10,3 +10,5 @@ pt-BR:
     school_classes: turmas
     student: aluno
     students: alunos
+    teacher: professor
+    teachers: professores

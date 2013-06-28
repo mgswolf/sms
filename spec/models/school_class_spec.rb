@@ -5,8 +5,8 @@ describe SchoolClass do
   subject { school_class }
 
   it { should be_valid }
-  it {should respond_to(:students)}
-  it "have teachers"
+  it { should respond_to(:students) }
+  #it { should respond_to(:teachers) }
 
   describe "have a name" do
     before { school_class.name = nil }

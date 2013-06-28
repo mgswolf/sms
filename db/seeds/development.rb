@@ -24,3 +24,11 @@ puts '---Creating Students ---'
       school_class: school_classes.sample
     })
 end
+
+# Teachers
+puts '---Creating Teachers ---'
+10.times do
+  FactoryGirl.create(:teacher, {
+    name: Faker::Name.name
+    })
+end

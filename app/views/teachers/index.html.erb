@@ -1,0 +1,36 @@
+<%= provide(:title,  t('titles.teachers.index')) %>
+<%= provide :breadcrumb do %>
+    <li class="active"><%= t('shared.nav.teachers') %></li>
+<% end %>
+<%= provide :sidebar do %>
+    <%=  form_for @search do |f| %>
+        <li class="nav-header"><%= f.label :name_contains %></li>
+        <li><%= f.text_field :name_contains %></li>
+        <hr/>
+        <li class="nav-header"><%=t 'helpers.order'  %></li>
+        <%= f.sort_link :id %> |
+        <%= f.sort_link :name %>
+        <hr/>
+        <%= f.submit t('helpers.links.search'), class: 'btn btn-primary' %> <%= link_to t('helpers.actions.clear'), teachers_path, class: 'btn' %>
+    <% end %>
+<% end %>
+<div class="page-header">
+  <h2><%=  t('titles.teachers.index') %></h2>
+</div>
+<table class="table table-striped">
+  <thead>
+  <tr>
+    <th>Id</th>
+    <th><%= t_field('teacher','name') %></th>
+    <th><%= t('helpers.created_at') %></th>
+    <th><%=t 'helpers.actions.all' %></th>
+  </tr>
+  </thead>
+  <tbody>
+  <%= render @teachers %>
+  </tbody>
+</table>
+<%= paginate @teachers %>
+<%= link_to t("helpers.actions.new"),
+            new_teacher_path,
+            :class => 'btn btn-primary' %>

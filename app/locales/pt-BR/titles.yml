@@ -8,3 +8,7 @@ pt-BR:
       index: "Alunos"
       edit: "Editar Aluno: %{student}"
       new: "Novo Aluno"
+    teachers:
+      index: "Professores"
+      edit: "Editar Professor: %{teacher}"
+      new: "Novo Professor"
