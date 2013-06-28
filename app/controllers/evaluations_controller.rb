@@ -1,5 +1,7 @@
 class EvaluationsController < ApplicationController
   before_filter :get_teacher, except: [:index]
+  before_filter :get_evaluation, except: [:index, :new, :create]
+
   def index
     @search = Evaluation.search(params[:search], include: [:teacher, :student])
     @evaluations = @search.page(params[:page])
@@ -14,7 +16,6 @@ class EvaluationsController < ApplicationController
   end
 
   def edit
-    @evaluation = @teacher.evaluations.find(params[:id])
   end
 
   def create
@@ -28,7 +29,6 @@ class EvaluationsController < ApplicationController
   end
 
   def update
-    @evaluation = @teacher.evaluations.find(params[:id])
     if @evaluation.update_attributes(params[:evaluation])
       redirect_to [@teacher,@evaluation], notice: t("flash.evaluations.update.notice")
     else
@@ -37,8 +37,20 @@ class EvaluationsController < ApplicationController
     end
   end
 
+  def destroy
+    if @evaluation.destroy
+      redirect_to evaluations_path, notice: t("flash.evaluations.destroy.notice")
+    else
+      redirect_to [@teacher,@evaluation], alert: t("flash.evaluations.destroy.alert")
+    end
+  end
+
   private
     def get_teacher
       @teacher = Teacher.find(params[:teacher_id])
+    end
+
+    def get_evaluation
+      @evaluation = @teacher.evaluations.find(params[:id])
     end
 end
