@@ -36,6 +36,11 @@ pt-BR:
   activerecord:
     errors:
       <<: *errors
+      models:
+        evaluation:
+          attributes:
+            base:
+              evaluations_limit: "O Aluno já realizou todas as Avaliações "
     models:
       evaluation:
         one: Avaliação

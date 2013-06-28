@@ -38,4 +38,11 @@ describe Evaluation do
     before { evaluation.student = nil }
     it { should_not be_valid }
   end
+
+  it "limits by 4 evaluations for student" do
+    4.times { FactoryGirl.create(:evaluation, student: student, teacher: teacher) }
+
+    expect(teacher.evaluations.create(student_id: student.id, title: 'any title',
+             grade: '9', evaluation_date: Time.now.to_date)).to raise_error
+  end
 end
