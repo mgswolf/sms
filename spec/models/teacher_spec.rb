@@ -7,7 +7,7 @@ describe Teacher do
   it { should be_valid }
   it { should respond_to(:school_classes) }
   it { should respond_to(:students) }
-  it "respond to evaluations"
+  it { should respond_to(:evaluations) }
 
   describe "have a name" do
     before { teacher.name = nil }
@@ -29,15 +29,31 @@ describe Teacher do
     before do
       teacher.save
       school_class = FactoryGirl.create(:school_class)
-      school_class.students.create(name: 'Joe')
-      school_class.students.create(name: 'Mary')
+      @joe = school_class.students.create(name: 'Joe')
+      @mary = school_class.students.create(name: 'Mary')
       teacher.school_classes << school_class
     end
 
-    it "have 1 student through the scholl class" do
+    it "have 2 student through the scholl class" do
       expect(teacher.students.size).to eql(2)
     end
+
+    describe "have evaluations" do
+      date = Time.now.to_date
+      before do
+        teacher.evaluations.create(student_id: @joe.id, title: 'joe avaliation',
+                                    grade: '9', evaluation_date: date)
+        teacher.evaluations.create(student_id: @mary.id, title: 'mary avaliation',
+                                    grade: '9.5', evaluation_date: date)
+      end
+
+      it "returns 2 evaluations" do
+        expect(teacher.evaluations.size).to eql(2)
+      end
+    end
   end
+
+
 
 
 end
