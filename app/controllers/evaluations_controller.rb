@@ -13,6 +13,10 @@ class EvaluationsController < ApplicationController
     @evaluation  = @teacher.evaluations.build
   end
 
+  def edit
+    @evaluation = @teacher.evaluations.find(params[:id])
+  end
+
   def create
     @evaluation = @teacher.evaluations.new(params[:evaluation])
     if @evaluation.save
@@ -20,6 +24,16 @@ class EvaluationsController < ApplicationController
     else
       flash.now.alert = t("flash.evaluations.create.alert")
       render :new
+    end
+  end
+
+  def update
+    @evaluation = @teacher.evaluations.find(params[:id])
+    if @evaluation.update_attributes(params[:evaluation])
+      redirect_to [@teacher,@evaluation], notice: t("flash.evaluations.update.notice")
+    else
+      flash.now.alert = t("flash.evaluations.update.alert")
+      render :edit
     end
   end
 

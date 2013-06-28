@@ -39,7 +39,7 @@ describe Evaluation do
     it { should_not be_valid }
   end
 
-  it "limits by 4 evaluations for student" do
+  it "limit by 4 evaluations for student" do
     4.times { FactoryGirl.create(:evaluation, student: student, teacher: teacher) }
 
     expect(teacher.evaluations.create(student_id: student.id, title: 'any title',

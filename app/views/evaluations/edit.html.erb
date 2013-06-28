@@ -1,0 +1,8 @@
+<%= provide :breadcrumb do %>
+    <li><%= link_to t('titles.evaluations.index'), evaluations_path %><span class="divider">/</span></li>
+    <li class="active"><%= t('titles.evaluations.edit', evaluation: "#{@teacher.name} - #{@evaluation.student.name_n_school_class}") %></li>
+<% end %>
+<div class="page-header">
+  <h2><%= t('titles.evaluations.edit', evaluation: "#{@teacher.name} - #{@evaluation.student.name_n_school_class}") %></h2>
+</div>
+<%= render :partial => 'form' %>
