@@ -18,8 +18,40 @@
   <tr class="even">
   </tbody>
 </table>
-
-</dl>
+<h4><%= t("student.evaluations") %></h4>
+<table class="table">
+  <thead>
+  <tr>
+    <th>Id</th>
+    <th><%= t_field('evaluation','title') %></th>
+    <th><%= t_field('evaluation','teacher') %></th>
+    <th><%= t_field('evaluation','evaluation_date') %></th>
+    <th><%= t_field('evaluation','grade') %></th>
+  </tr>
+  </thead>
+  <tbody>
+    <% @student.evaluations.each do |evaluation| %>
+    <tr class="evaluations <%= cycle('odd', 'even') %>">
+      <td><%= link_to evaluation.id, teacher_evaluation_path(evaluation.teacher, evaluation) %></td>
+      <td><%= evaluation.title %></td>
+      <td><%= evaluation.teacher.name %></td>
+      <td><%=l evaluation.evaluation_date, format: :long %></td>
+      <td><%= number_with_precision(evaluation.grade, precision: 2)  %></td>
+    </tr>
+    <% end %>
+  </tbody>
+  <tfoot>
+  <tr class="<%= @student.approval_status[:status] %>">
+    <td><%=t "student.approval_status" %></td>
+    <td colspan="4"><%= @student.approval_status[:msg] %></td>
+  </tr>
+  <tr>
+    <td colspan="4"><%=t "student.average_grade" %></td>
+    <td class="grade"><%= number_with_precision(@student.average_grade,
+                                                 precision: 2) %></td>
+  </tr>
+  </tfoot>
+</table>
 
 
 <div class="form-actions">

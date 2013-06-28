@@ -21,3 +21,16 @@
 .table .even {
   background: #FFFFFF
 }
+.table .not-approved {
+  background: #f2dede;
+}
+.table .pending {
+  background: #fcf8e3;
+}
+.table .approved {
+  background: #dff0d8;
+}
+.table .grade {
+  font-size: 2em;
+  font-weight: 600px;
+}

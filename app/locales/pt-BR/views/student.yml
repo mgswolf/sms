@@ -1,0 +1,8 @@
+pt-BR:
+  student:
+    average_grade: "Média Geral:"
+    approval_status: "Situação atual:"
+    evaluations: "Avaliações"
+    pending_avaliations: "O Aluno ainda tem avaliações pendentes."
+    not_approved: "O aluno não obteve média suficiente para ser aprovado."
+    approved: "O aluno está aprovado!"
