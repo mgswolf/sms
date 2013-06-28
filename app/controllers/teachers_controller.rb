@@ -26,6 +26,15 @@ class TeachersController < ApplicationController
     end
   end
 
+  def update
+    if @teacher.update_attributes(params[:teacher])
+      redirect_to @teacher, notice: t("flash.teachers.update.notice")
+    else
+      flash.now.alert = t("flash.teachers.update.alert")
+      render :edit
+    end
+  end
+
   private
     def get_teacher
       @teacher = Teacher.find(params[:id])
