@@ -22,3 +22,14 @@ pt-BR:
       update:
         alert: "Não foi possível atualizar o aluno."
         notice: "Aluno atualizado com sucesso."
+    teachers:
+      not_found: 'Professor não encontrado.'
+      create:
+        alert: "Não foi possível cadastrar o professor."
+        notice: "Professor cadastrado com sucesso."
+      destroy:
+        alert: "Não foi possível excluir o professor."
+        notice: "Professor excluído com sucesso."
+      update:
+        alert: "Não foi possível atualizar o professor."
+        notice: "Professor atualizado com sucesso."

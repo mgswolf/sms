@@ -24,3 +24,6 @@ pt-BR:
       student:
         create: "Cadastrar Aluno"
         update: "Atulizar Aluno"
+      teacher:
+        create: "Cadastrar Professor"
+        update: "Atulizar Professor"

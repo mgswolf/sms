@@ -1,6 +1,6 @@
 require  'spec_helper'
 
-describe "Creating a new School Class" do
+describe "Creating a new Student" do
   let!(:school_class) { FactoryGirl.create(:school_class) }
   before do
     ensure_on new_student_path
@@ -8,7 +8,7 @@ describe "Creating a new School Class" do
 
   describe "with valid args" do
     before do
-      fill_in t("form.student.name"), with: 'Design'
+      fill_in t("form.student.name"), with: 'Joe'
       select(school_class.name, :from => t("form.student.school_class"))
 
       click_button t("helpers.submit.student.create")

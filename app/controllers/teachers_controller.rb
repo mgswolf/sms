@@ -9,6 +9,23 @@ class TeachersController < ApplicationController
   def show
   end
 
+  def new
+    @teacher = Teacher.new
+  end
+
+  def edit
+  end
+
+  def create
+    @teacher = Teacher.new(params[:teacher])
+    if @teacher.save
+      redirect_to @teacher, notice: t("flash.teachers.create.notice")
+    else
+      flash.now.alert = t("flash.teachers.create.alert")
+      render :new
+    end
+  end
+
   private
     def get_teacher
       @teacher = Teacher.find(params[:id])

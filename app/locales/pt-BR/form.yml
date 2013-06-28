@@ -5,3 +5,5 @@ pt-BR:
     student:
       name: "Nome do Aluno"
       school_class: "Turma"
+    teacher:
+      name: "Nome do Professor"
