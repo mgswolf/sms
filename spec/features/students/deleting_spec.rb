@@ -1,6 +1,6 @@
 require 'spec_helper'
 
-describe "Deleting School Class" do
+describe "Deleting Student" do
   let(:school_class) { FactoryGirl.create(:school_class)}
   let(:student) { FactoryGirl.create(:student, school_class: school_class)}
   before do
