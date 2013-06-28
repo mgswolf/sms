@@ -1,0 +1,20 @@
+<tr class="evaluation" id="<%= dom_id(evaluation) %>">
+  <td><%= link_to evaluation.id, teacher_evaluation_path(evaluation.teacher, evaluation) %></td>
+  <td><%= evaluation.title %></td>
+  <td><%= evaluation.teacher.name %></td>
+  <td><%= evaluation.student.name %></td>
+  <td><%=l evaluation.evaluation_date, format: :long %></td>
+  <td><%= number_with_precision(evaluation.grade, precision: 2)  %></td>
+  <td>
+    <%= link_to t("helpers.actions.show"),
+                teacher_evaluation_path(evaluation.teacher, evaluation),
+                  :class => 'btn btn-mini' %>
+    <%= link_to t("helpers.actions.edit"),
+                edit_teacher_evaluation_path(evaluation.teacher, evaluation),
+                  :class => 'btn btn-info btn-mini' %>
+    <%= link_to t("helpers.actions.destroy"),
+                teacher_evaluation_path(evaluation.teacher, evaluation),
+                  method: :delete, confirm: t('helpers.actions.confirm'),
+                  :class => 'btn btn-danger btn-mini' %>
+  </td>
+</tr>

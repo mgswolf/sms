@@ -1,6 +1,6 @@
 require 'faker'
 puts '---Cleaning DataBase --'
-[SchoolClass, Student].map(&:delete_all)
+[SchoolClass, Student, Teacher, Evaluation].map(&:delete_all)
 
 # School Classes
 puts '---Creating School Classes ---'
@@ -18,8 +18,9 @@ end
 
 # Students
 puts '---Creating Students ---'
+students = []
 50.times do
-  FactoryGirl.create(:student, {
+  students << FactoryGirl.create(:student, {
       name: Faker::Name.name,
       school_class: school_classes.sample
     })
@@ -27,9 +28,22 @@ end
 
 # Teachers
 puts '---Creating Teachers ---'
+teachers = []
 10.times do
   teacher = FactoryGirl.create(:teacher, {
     name: Faker::Name.name
     })
   teacher.school_classes << school_classes.sample
+  teachers << teacher
+end
+
+#Evaluations
+puts '---Creating Evaluations ---'
+30.times do
+  FactoryGirl.create(:evaluation, {
+      title: Faker::Lorem.words(2),
+      teacher: teachers.sample,
+      student: students.sample,
+      grade: rand(0.1..10)
+    })
 end

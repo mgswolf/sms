@@ -18,6 +18,9 @@ pt-BR:
     order: "Ordem"
 
     submit:
+      evaluation:
+        create: "Cadastrar Avaliação"
+        update: "Atualizar Avaliação"
       school_class:
         create: "Cadastrar Turma"
         update: "Atualizar Turma"

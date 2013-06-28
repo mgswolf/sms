@@ -1,5 +1,11 @@
 pt-BR:
   form:
+    evaluation:
+      student: "Aluno"
+      teacher: "Nome do Professor"
+      evaluation_date: "Data da avaliação"
+      grade: "Nota da avaliação"
+      title: "Título"
     school_class:
       name: "Nome da Turma"
     student:

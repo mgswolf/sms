@@ -5,8 +5,8 @@ describe Teacher do
   subject { teacher }
 
   it { should be_valid }
-  it { should respond_to(:school_classes)}
-  it { should respond_to(:students)}
+  it { should respond_to(:school_classes) }
+  it { should respond_to(:students) }
   it "respond to evaluations"
 
   describe "have a name" do

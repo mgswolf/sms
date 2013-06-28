@@ -1,0 +1,36 @@
+<%= form_for [@teacher, @evaluation], :html => { :class => 'form-horizontal' } do |f| %>
+    <%= render 'shared/error_messages', object: @evaluation %>
+    <div class="control-group">
+      <%= f.label :student_id, t("form.evaluation.student"), :class => 'control-label' %>
+      <div class="controls">
+        <%= f.collection_select :student_id, @teacher.students, :id, :name_n_school_class, :class => 'select input-xxlarge', require: true %>
+      </div>
+    </div>
+
+    <div class="control-group">
+      <%= f.label :grade, t("form.evaluation.grade"), :class => 'control-label' %>
+      <div class="controls">
+        <%= f.text_field :grade, :class => 'text_field', require: true %>
+      </div>
+    </div>
+
+    <div class="control-group">
+      <%= f.label :evaluation_date, t("form.evaluation.evaluation_date"), :class => 'control-label' %>
+      <div class="controls">
+        <%= f.date_select :evaluation_date, :class => 'date_field'%>
+      </div>
+    </div>
+
+    <div class="control-group">
+      <%= f.label :title, t("form.evaluation.title"), :class => 'control-label' %>
+      <div class="controls">
+        <%= f.text_field :title, :class => 'text_field' %>
+      </div>
+    </div>
+
+    <div class="form-actions">
+      <%= f.submit :class => 'btn btn-primary' %>
+      <%= link_to t("helpers.actions.cancel"),
+                  :back, :class => 'btn' %>
+    </div>
+<% end %>

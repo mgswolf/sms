@@ -8,7 +8,9 @@ Sms::Application.routes.draw do
   end
   resources :teachers do
     get 'page/:page', :action => :index, :on => :collection
+    resources :evaluations, except: [:index]
   end
+  get 'evaluations', to: "evaluations#index", as: :evaluations
 end
 
 ActionDispatch::Routing::Translator.translate_from_file(

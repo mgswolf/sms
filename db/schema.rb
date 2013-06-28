@@ -11,7 +11,20 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20130628004312) do
+ActiveRecord::Schema.define(:version => 20130628032642) do
+
+  create_table "evaluations", :force => true do |t|
+    t.integer  "student_id",                                    :null => false
+    t.integer  "teacher_id",                                    :null => false
+    t.decimal  "grade",           :precision => 6, :scale => 2
+    t.date     "evaluation_date"
+    t.string   "title"
+    t.datetime "created_at",                                    :null => false
+    t.datetime "updated_at",                                    :null => false
+  end
+
+  add_index "evaluations", ["student_id"], :name => "index_evaluations_on_student_id"
+  add_index "evaluations", ["teacher_id"], :name => "index_evaluations_on_teacher_id"
 
   create_table "school_classes", :force => true do |t|
     t.string   "name",       :null => false

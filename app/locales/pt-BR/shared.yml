@@ -1,6 +1,7 @@
 pt-BR:
   shared:
     nav:
+      evaluations: "Avaliações"
       home: "Início"
       school_classes: "Turmas"
       students: "Alunos"

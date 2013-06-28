@@ -6,6 +6,8 @@ pt-BR:
     destroy: excluir
     cancel: cancelar
     page: pagina
+    evaluation: avaliacao
+    evaluations: avaliacoes
     school_class: turma
     school_classes: turmas
     student: aluno

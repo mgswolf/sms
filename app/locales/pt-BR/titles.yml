@@ -1,5 +1,9 @@
 pt-BR:
   titles:
+    evaluations:
+      index: "Avaliações"
+      edit: "Editar avaliação: %{evaluation}"
+      new: "Nova Avaliação"
     school_classes:
       index: "Turmas"
       edit: "Editar Turma: %{school_class}"

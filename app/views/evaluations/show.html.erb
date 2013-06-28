@@ -1,0 +1,42 @@
+<%= provide :breadcrumb do %>
+    <li><%= link_to t('shared.nav.evaluations'), evaluations_path %><span class="divider">/</span></li>
+    <li class="active"><%= "#{@teacher.name} - #{@evaluation.student.name_n_school_class}" %></li>
+<% end %>
+<div class="page-header">
+  <h2><%= "#{@teacher.name} - #{@evaluation.student.name_n_school_class}" %></h2>
+</div>
+
+<table class="table">
+  <tr class="odd">
+    <td><strong><%= t_field('evaluation','teacher') %>:</strong></td>
+    <td><%= link_to @teacher.name, @teacher %></td>
+  <tr>
+  <tr class="even">
+    <td><strong><%= t_field('evaluation','student') %>:</strong></td>
+    <td><%= link_to @evaluation.student.name, @evaluation.student %></td>
+  <tr>
+  <tr class="odd">
+    <td><strong><%= t_field('evaluation','title') %>:</strong></td>
+    <td><%= @evaluation.title %></td>
+  <tr>
+  <tr class="even">
+    <td><strong><%= t_field('evaluation','evaluation_date') %>:</strong></td>
+    <td><%=l @evaluation.evaluation_date, format: :long %></td>
+  <tr>
+  <tr class="odd">
+    <td><strong><%= t_field('evaluation','grade') %>:</strong></td>
+    <td><%= number_with_precision(@evaluation.grade, precision: 2) %></td>
+  <tr>
+</table>
+
+<div class="form-actions">
+  <%= link_to t('helpers.actions.back'),
+              evaluations_path, :class => 'btn'  %>
+  <%= link_to t("helpers.actions.edit"),
+              edit_teacher_evaluation_path(@teacher, @evaluation), :class => 'btn btn-info' %>
+  <%= link_to t("helpers.actions.destroy"),
+              teacher_evaluation_path(@teacher, @evaluation),
+              :method => 'delete',
+              :data => { :confirm => t("helpers.actions.confirm", :default => 'Are you sure?') },
+              :class => 'btn btn-danger' %>
+</div>

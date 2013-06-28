@@ -7,7 +7,7 @@ describe Student do
 
   it { should be_valid }
   it { should respond_to(:school_class) }
-  #it { should respond_to(:teachers) }
+  it { should respond_to(:teachers) }
 
   describe "have a name" do
     before { student.name = nil }
@@ -21,5 +21,16 @@ describe Student do
   describe "needs a school class" do
     before { student.school_class = nil }
     it { should_not be_valid }
+  end
+
+  it "have name_n_school_class" do
+    composed_name = "#{student.name} - #{school_class.name}"
+    expect(student.name_n_school_class).to eql(composed_name)
+  end
+
+  it "have a teacher" do
+    teacher = FactoryGirl.create(:teacher)
+    school_class.teachers << teacher
+    expect(student.teachers).to include(teacher)
   end
 end

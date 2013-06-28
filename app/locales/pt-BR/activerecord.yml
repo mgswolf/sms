@@ -37,6 +37,9 @@ pt-BR:
     errors:
       <<: *errors
     models:
+      evaluation:
+        one: Avaliação
+        other: Avaliações
       school_class:
         one: Turma
         other: Turmas
@@ -47,6 +50,14 @@ pt-BR:
         one: Professor
         other: Professores
     attributes:
+      evaluation:
+        title: Título
+        grade: Nota
+        student: Aluno
+        student_id: Aluno
+        teacher: Professor
+        teacher_id: Professor
+        evaluation_date: Data da Avaliação
       school_class:
         name: Nome
       student:

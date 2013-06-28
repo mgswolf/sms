@@ -1,5 +1,10 @@
 pt-BR:
   flash:
+    evaluations:
+      not_found: "Avaliação não encontrada."
+      create:
+        alert: "Não foi possível cadastrar a Avaliação."
+        notice: "Avaliação cadastrada com sucesso."
     school_classes:
       not_found: "Turma não encontrada."
       create:

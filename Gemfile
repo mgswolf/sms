@@ -24,6 +24,8 @@ group :development do
   gem 'annotate', '~> 2.5.0'
   gem 'thin'
   gem 'quiet_assets'
+  gem "better_errors"
+  gem "binding_of_caller"
 end
 
 group :test, :development do
